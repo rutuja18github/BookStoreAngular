@@ -5,7 +5,8 @@
                 <img class="shopimage" src="" />
                 <h3>ONLINE BOOK SHOPPING</h3>
             </div>
-            <div class="inner-Form">  
+            <div class="inner-Form">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"> 
                     <div class="top">
                         <button class="login">LOGIN</button>
                         <button class="signup">SIGNUP</button>
@@ -13,19 +14,20 @@
 
                     <div class="text-fileds">
                         <label class="font-label">Full Name</label>
-
-                        <input class="textBox" type="text"/>
-
+                        <input class="textBox" type="text" formControlName="fullname"/>
+                        <span class="error" *ngIf="signupForm.controls['fullname'].invalid && signupForm.controls['fullname'].touched">Enter full name</span>
                         <label class="font-label">Email id</label>
-
-                        <input class="textBox" type="email" />
+                        <input class="textBox" type="email" formControlName="email" />
+                        <span class="error" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">Enter email</span>
                         <label class="font-label" >Password</label>
-                        <input class="textBox" type="password" id="pwd" name="pwd"/>
+                        <input class="textBox" type="password" id="pwd" name="pwd" formControlName="password"/>
+                        <span class="error" *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched">Enter password</span>
                         <label class="font-label">Mobile Number</label>
-                        <input class="textBox" type="text" />
-                        <!-- <br /> -->
-                        <button class="btnlogin">Signup</button>
+                        <input class="textBox" type="text" formControlName="phone"/>
+                        <span class="error" *ngIf="signupForm.controls['phone'].invalid && signupForm.controls['phone'].touched">Enter mobile number</span>
+                        <button class="btnlogin" >Signup</button>
                     </div>
+                </form>
             </div>
         </div>
     </div>
