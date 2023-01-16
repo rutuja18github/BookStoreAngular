@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UserService } from 'src/app/Services/UserService/user.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class SignupComponent implements OnInit {
   signupForm !: FormGroup;
   submitted = false;
-  constructor(private formBuilder:FormBuilder){}
+  constructor(private formBuilder:FormBuilder,private user:UserService){}
 
   ngOnInit(): void {
       this.signupForm = this.formBuilder.group({
@@ -25,10 +26,16 @@ export class SignupComponent implements OnInit {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.signupForm.invalid) {
-      return;
+    if (this.signupForm.valid) {
+      let data={
+        fullname: this.signupForm.value.fullname,
+        email: this.signupForm.value.email,
+        password: this.signupForm.value.password,
+        mobileNumber: this.signupForm.value.phone,
+      }
+      this.user.signup(data).subscribe((responce) =>{
+         console.log(responce)
+      })
     }
   }
-
-
 }
