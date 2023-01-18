@@ -14,6 +14,7 @@ export class DisplayBookComponent implements OnInit{
   author:any
   price:any;
   discountPrice:any;
+  quantity:any
   constructor(private user:UserService){}
 
   ngOnInit(): void {

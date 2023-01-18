@@ -12,7 +12,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
-import { HeaderComponent } from './Components/header/header.component';
 import { DisplayBookComponent } from './Components/display-book/display-book.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
@@ -25,9 +24,8 @@ import {MatCardModule} from '@angular/material/card';
     SignupComponent,
     SigninComponent,
     DashboardComponent,
-    HeaderComponent,
     DisplayBookComponent,
-    //DisplayBookComponent
+  
   ],
   imports: [
     BrowserModule,
