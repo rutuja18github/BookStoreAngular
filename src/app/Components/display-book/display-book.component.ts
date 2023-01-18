@@ -9,6 +9,7 @@ import { UserService } from 'src/app/Services/UserService/user.service';
 export class DisplayBookComponent implements OnInit{
 
   bookList:any
+  noOfBooks!: number;
   bookName:any;
   author:any
   price:any;
@@ -23,6 +24,7 @@ export class DisplayBookComponent implements OnInit{
     this.user.getBooks().subscribe((responce:any) =>{
       console.log(responce)
       this.bookList=responce.data
+      this.noOfBooks=this.bookList.length
       console.log(this.bookList)
     })
   }
