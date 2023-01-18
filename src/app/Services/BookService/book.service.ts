@@ -5,25 +5,24 @@ import { HttpService } from '../HttpService/http.service';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class BookService {
 
   constructor(private httpService: HttpService) { }
 
-  signup(data: any){
-    let header = { 
-      headers: new HttpHeaders({
-          'Content-Type': 'application/json'
-        })
-      };
-  return this.httpService.postService("/users/signup", data, false, header )
-  }
-
-  login(data:any){
+  getBooks(){
     let header={
       Headers:new HttpHeaders({
            'Content-Type' : 'application/json'
       })
     }
-    return this.httpService.postService("/users/signin",data,false,header)
+    return this.httpService.getService("/book/allbook",false,header)
+  }
+  getBookById(data:any){
+    let header={
+      Headers:new HttpHeaders({
+           'Content-Type' : 'application/json'
+      })
+    }
+    return this.httpService.getService("/book/${data._id}",false,header)
   }
 }

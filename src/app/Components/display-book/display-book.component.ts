@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
+import { BookService } from 'src/app/Services/BookService/book.service';
+import { DataService } from 'src/app/Services/DataService/data.service';
 import { UserService } from 'src/app/Services/UserService/user.service';
 
 @Component({
@@ -7,7 +10,7 @@ import { UserService } from 'src/app/Services/UserService/user.service';
   styleUrls: ['./display-book.component.scss']
 })
 export class DisplayBookComponent implements OnInit{
-
+  
   bookList:any
   noOfBooks!: number;
   bookName:any;
@@ -15,18 +18,25 @@ export class DisplayBookComponent implements OnInit{
   price:any;
   discountPrice:any;
   quantity:any
-  constructor(private user:UserService){}
+
+  constructor(private bookService:BookService,private dataService:DataService,private router:Router){}
 
   ngOnInit(): void {
     this.getAllBook()
   }
 
   getAllBook(){
-    this.user.getBooks().subscribe((responce:any) =>{
+    this.bookService.getBooks().subscribe((responce:any) =>{
       console.log(responce)
       this.bookList=responce.data
       this.noOfBooks=this.bookList.length
       console.log(this.bookList)
     })
+  }
+
+  openBookDetails(book:any){
+    console.log(book)
+    this.dataService.sharedData(book);
+    this.router.navigate([ '/dashboard/openBook' ])
   }
 }

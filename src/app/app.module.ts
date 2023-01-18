@@ -15,6 +15,7 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { DisplayBookComponent } from './Components/display-book/display-book.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
+import { OpenBookViewComponent } from './Components/open-book-view/open-book-view.component';
 
 
 
@@ -25,6 +26,7 @@ import {MatCardModule} from '@angular/material/card';
     SigninComponent,
     DashboardComponent,
     DisplayBookComponent,
+    OpenBookViewComponent,
   
   ],
   imports: [

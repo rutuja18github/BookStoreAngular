@@ -1,0 +1,213 @@
+.bookHead{
+  display: flex;
+  //justify-content: space-between;
+  width: 30vw;
+  margin-left:200px ;
+  margin-top: 30px;
+}
+.home {
+  color: #9D9D9D;
+}
+
+.booksOuterDiv{
+  display: flex;
+  flex-wrap: wrap;
+  width: 75vw;
+  margin-left: 200px;
+  //border: 4px solid blue;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.imgDiv {
+  display: flex;
+  flex-direction: row;
+  //border: 4px solid red;
+}
+
+.small-images{
+  display: flex;
+  flex-direction: column;
+}
+.small-img {
+  padding: 2px;
+  //border: 1px solid #7C1E1E;
+  background: #eabdc1;
+  width: 44px;
+  height: 54px;
+}
+
+.big-image {
+  border: 1px solid #D1D1D1;
+  border-radius: 2px;
+  width: 361px;
+  height: 413px;
+}
+
+.big-image img {
+  margin-top: 23px;
+  margin-left: 40px;
+  width: 282px;
+  height: 367px;
+}
+
+
+.buttonsDiv {
+  width: 363px;
+  margin-left: 50px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.bag {
+  background: #A03037;
+  color: white;
+  font-size: 14px;
+  width: 170px;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+}
+
+.wishlist {
+  background: #333333;
+  color: white;
+  font-size: 14px;
+  width: 170px;
+  height: 40px;
+  border: none;
+  border-radius: 2px;
+}
+.book-details{
+  width: 41vw;
+  //border: 4px solid green;
+  margin-left: 7%;
+}
+.book-info{
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  //border: 4px solid rgb(128, 0, 0);
+}
+.bookName{
+  font-weight: bold;
+  color:#0A0102;
+  font-size: 20px;
+}
+.authorName{
+  font-size: 12px;
+  color: #878787;
+  font-size: 15px;
+}
+.rating{
+  display: flex;
+  flex-direction: row;
+}
+.rating-num{
+  width: 35px;
+  height: 16px;
+  background-color: #388E3C;
+  border-radius: 1px;
+  font-size: 11px;
+  color: #FFFFFF;
+  margin-right: 5px;
+  padding-bottom: 3px;
+  padding-left: 7px;  
+}
+.bookQuantity{
+  color: #878787;
+  font-size: 13px;
+}
+
+.discountPrice{
+  font-size: 20px;
+  font-weight: bold;
+  color: #0A0102;
+  margin-right: 10px;
+}
+.originalPrice{
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: line-through;
+  color: #878787;
+}
+
+.detail{
+  color: #878787;
+  font-size: 17px;
+  margin-top: 20px;
+}
+
+.description{
+  color:#373434;
+  font-size: 13px;
+}
+.feedback{
+  color:#0A0102;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.feedbackDiv{
+  width: 38vw;
+  height: 24vh;
+  background-color:#F5F5F5;
+}
+.overall{
+  color:#0A0102;
+  font-size: 11px;
+  margin-left: 11px;
+  margin-top: 13px;
+}
+
+.feedbackInput {
+  margin-left: 11px;
+  width: 36vw;
+  height: 8vh;
+  font-weight: 100;
+  font: normal 15px/20px Roboto;
+  background-color: #FFFFFF;
+  border: none;  
+}
+.submitBtn {
+  position: absolute;
+  margin-top: 75px;
+  margin-left: -76px;
+  width: 76px;
+  height: 24px;
+  background-color: #3371B5;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+}
+
+
+.detail {
+  color: #373434;
+}
+
+.feedbackList {
+  margin: 10px 0px;
+  width: 100%;
+}
+
+.starContainer {
+  margin-left: -7px;
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+
+input[type="radio"] {
+  visibility: hidden;
+}
+
+// .review {
+//   margin-left: 50px;
+//   display: flex;
+//   flex-direction: column;
+// }
+
+.line{
+  width: 38vw;
+}
