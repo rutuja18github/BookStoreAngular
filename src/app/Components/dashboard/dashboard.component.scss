@@ -65,9 +65,10 @@
   }
   
   .footer {
-    position: relative;
+    position: fixed;
     bottom: 0;
     width: 87%;
+    height: 5%;
     background-color: #2E1D1E;
     color: white;
     text-align: left;

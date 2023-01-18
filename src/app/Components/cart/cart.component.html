@@ -1,0 +1,53 @@
+<div class="main-div">
+    <div class="bookHead">
+        <p class="home" routerLink="/dashboard/display">Home / </p>
+        <p style="color: black; font-weight: 500;">My cart</p>
+    </div>
+    <div class="booksOuterDiv">
+        <div class="cart-detail">
+            <span style="color: black; font-weight: 500;">My Cart()</span>
+            <select class="dropdown-select">
+                <option value="">Use current location</option>
+                <option value="location-1">Location</option>
+            </select>
+        </div>
+        <div class="bookInfo">
+            <div class="image">
+                <img style="width: 44px;  height: 54px;" src="../../assets/bookImage2.png">
+            </div>
+            <div class="bookData">
+                <span class="bookName">name</span>
+                <span class="authorName"> by author</span>
+                <div>
+                    <span class="discountPrice">price</span>
+                    <span class="originalPrice">Rs. oPrice</span>
+                </div>
+                <div class="buttons">
+                    <div class="plus-minus">
+                        <button>+</button>
+                        <span class="cartQty">cart</span>
+                        <button>-</button>
+                    </div>
+                    <button mat-stroked-button class="remove"> Remove</button>
+                </div>
+            </div>
+        </div>
+        <button class="place-order-button" mat-flat-button>Place Order</button>
+    </div>
+
+
+    <!-- Address details -->
+    <div class="address">
+        <div>
+            <span>Address Details</span>
+        </div>
+    </div>
+
+    <!-- Order summary -->
+    <div class="order-summary">
+        <div>
+            <span>OrderSummary</span>
+        </div>
+    </div>
+
+</div>

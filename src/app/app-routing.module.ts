@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CartComponent } from './Components/cart/cart.component';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { DisplayBookComponent } from './Components/display-book/display-book.component';
 import { OpenBookViewComponent } from './Components/open-book-view/open-book-view.component';
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent,
    children:[
     {path:'display',component:DisplayBookComponent},
-    {path:'openBook',component:OpenBookViewComponent}
+    {path:'openBook',component:OpenBookViewComponent},
+    {path:'cart',component:CartComponent}
   ]}
 ];
 

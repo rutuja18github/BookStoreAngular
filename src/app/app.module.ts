@@ -16,6 +16,7 @@ import { DisplayBookComponent } from './Components/display-book/display-book.com
 import {MatSelectModule} from '@angular/material/select';
 import {MatCardModule} from '@angular/material/card';
 import { OpenBookViewComponent } from './Components/open-book-view/open-book-view.component';
+import { CartComponent } from './Components/cart/cart.component';
 
 
 
@@ -27,6 +28,7 @@ import { OpenBookViewComponent } from './Components/open-book-view/open-book-vie
     DashboardComponent,
     DisplayBookComponent,
     OpenBookViewComponent,
+    CartComponent,
   
   ],
   imports: [
