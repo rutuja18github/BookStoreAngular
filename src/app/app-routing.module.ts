@@ -6,6 +6,7 @@ import { DisplayBookComponent } from './Components/display-book/display-book.com
 import { OpenBookViewComponent } from './Components/open-book-view/open-book-view.component';
 import { SigninComponent } from './Components/signin/signin.component';
 import { SignupComponent } from './Components/signup/signup.component';
+import { WishlistComponent } from './Components/wishlist/wishlist.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/login',pathMatch:'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
    children:[
     {path:'display',component:DisplayBookComponent},
     {path:'openBook',component:OpenBookViewComponent},
-    {path:'cart',component:CartComponent}
+    {path:'cart',component:CartComponent},
+    {path: 'wishlist', component:WishlistComponent},
   ]}
 ];
 
