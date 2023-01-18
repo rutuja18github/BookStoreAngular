@@ -26,4 +26,13 @@ export class UserService {
     }
     return this.httpService.postService("/users/signin",data,false,header)
   }
+
+  getBooks(){
+    let header={
+      Headers:new HttpHeaders({
+           'Content-Type' : 'application/json'
+      })
+    }
+    return this.httpService.getService("/book/allbook",false,header)
+  }
 }

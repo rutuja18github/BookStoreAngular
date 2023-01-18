@@ -13,7 +13,10 @@ import { MatInputModule } from '@angular/material/input';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
 import { HeaderComponent } from './Components/header/header.component';
-import { GetAllBookComponent } from './Components/get-all-book/get-all-book.component';
+import { DisplayBookComponent } from './Components/display-book/display-book.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCardModule} from '@angular/material/card';
+
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { GetAllBookComponent } from './Components/get-all-book/get-all-book.comp
     SigninComponent,
     DashboardComponent,
     HeaderComponent,
-    GetAllBookComponent
+    DisplayBookComponent,
+    //DisplayBookComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { GetAllBookComponent } from './Components/get-all-book/get-all-book.comp
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatSelectModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

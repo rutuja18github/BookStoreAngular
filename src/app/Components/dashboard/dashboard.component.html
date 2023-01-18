@@ -1,7 +1,30 @@
 <div class="header">
-    <app-header></app-header>
-</div>
+    <mat-toolbar class="header-inner">
+        <div class="logo">
+            <img src="../../../assets/book.png">
+        </div>
+        <div>
+            <span class="text">Bookstore</span>
+        </div>
 
+        <div class="search">
+            <img src="../../../assets/Search-icon.svg">
+            <input class="search-input" type="text" placeholder="Search...">
+        </div>
+
+        <div class="profile-cart">
+            <button class="icons" mat-flat-button>
+                <img class="iconImage" src="../../../assets/Person.svg">
+                <span style="margin-left: 23px;">Profile</span>
+            </button>
+            <button class="icons" mat-flat-button>
+                <img class="iconImage" src="../../../assets/cart.png">
+                <span style="margin-left: 23px;">Cart</span>
+            </button>
+        </div>
+    </mat-toolbar>
+</div>
+<router-outlet></router-outlet>
 <footer class="footer">
     <p>Copyright © 2022, Bookstore Private Limited. All Rights Reserved</p>
 </footer>
