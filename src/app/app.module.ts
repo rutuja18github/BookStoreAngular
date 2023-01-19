@@ -18,7 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import { OpenBookViewComponent } from './Components/open-book-view/open-book-view.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { WishlistComponent } from './Components/wishlist/wishlist.component';
-
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -43,7 +43,8 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
     MatInputModule,
     MatToolbarModule,
     MatSelectModule,
-    MatCardModule
+    MatCardModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

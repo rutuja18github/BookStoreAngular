@@ -11,6 +11,7 @@
                 <option value="location-1">Location</option>
             </select>
         </div>
+        <div class="bookDetail">
         <div class="bookInfo">
             <div class="image">
                 <img style="width: 44px;  height: 54px;" src="../../assets/bookImage2.png">
@@ -32,14 +33,66 @@
                 </div>
             </div>
         </div>
-        <button class="place-order-button" mat-flat-button>Place Order</button>
+            <button class="place-order-button" mat-flat-button>Place Order</button>
+        </div>
     </div>
 
 
     <!-- Address details -->
     <div class="address">
         <div>
-            <span>Address Details</span>
+            <div class="editAddress">
+                <span>Address Details</span>
+                <button  mat-flat-button>Add New Address</button>
+            </div>
+            <div class="userDetails">
+                <div class="textFieldsDiv">
+                    <div class="textField">
+                        <span >Full name</span>
+                        <mat-form-field appearance="outline" class="">
+                        <input matInput placeholder="" >
+                        <mat-error>Full name is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="textField">
+                        <span >Mobile number</span>
+                        <mat-form-field appearance="outline" style="margin-left: 10px;">
+                        <input matInput placeholder="" >
+                        <mat-error>Mobile number is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="addressInput">
+                    <span >Address</span>
+                    <mat-form-field appearance="outline" >
+                    <input matInput placeholder="" >
+                    <mat-error>Address is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="textFieldsDiv">
+                    <div class="textField">
+                        <span >city/town</span>
+                        <mat-form-field appearance="outline" class="">
+                        <input matInput placeholder="" >
+                        <mat-error>city/town is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="textField">
+                        <span >State</span>
+                        <mat-form-field appearance="outline" style="margin-left: 10px;" >
+                        <input matInput>
+                        <mat-error>State is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="radioButton">
+                    <span >Type</span>
+                    <mat-radio-group aria-label="Select an option" style="margin-left: -10px;">
+                        <mat-radio-button  value="1">Option 1</mat-radio-button>
+                        <mat-radio-button value="2">Option 2</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
         </div>
     </div>
 

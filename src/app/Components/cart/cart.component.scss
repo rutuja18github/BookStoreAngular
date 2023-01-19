@@ -1,5 +1,5 @@
 .main-div{
-  padding-bottom: 20px;
+  padding-bottom: 80px;
   padding-left: 17%;
   margin-top: 5px;
   height: fit-content;
@@ -42,6 +42,12 @@
     //outline: none;
     //border: none;
   }
+  .bookDetail{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 48vw;
+   }
   .bookInfo{
       display: flex;
       flex-direction: row;
@@ -124,8 +130,8 @@
 }
 
 .place-order-button {
-  margin-top: 20px;
-  margin-left: 570px;
+  margin-top: 80px;
+  left: 50%;
   width: 151px;
   height: 35px;
   background-color: #3371B5;
@@ -136,13 +142,52 @@
 .address{
   padding: 15px;
   width: 47.2vw;
-  height: 6vh;
   margin-top: -15px;
   padding-left: 25px;
   border: 1px solid lightgray;
 }
 
+.userDetails{
+  border: 1px solid red;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+.textFieldsDiv{
+  display: flex;
+  flex-direction: row;
+}
+.textField {
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 0px solid saddlebrown;
+}
 
+.addressInput{
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  //margin-left: -15px;
+}
+.radioButton{
+  display: flex;
+  flex-direction: column;
+}
+
+.editAddress {
+  width: 41vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 10px 40px;
+  border: 1px solid blue;
+}
 .order-summary{
   padding: 15px;
   width: 47.2vw;

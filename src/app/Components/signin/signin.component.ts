@@ -32,7 +32,7 @@ export class SigninComponent implements OnInit{
        }
        this.user.login(payload).subscribe((responce:any)=>{
             console.log(responce)
-            localStorage.setItem('token',responce.data)
+            localStorage.setItem('Token',responce.data)
             this.router.navigate([ '/dashboard/display' ])
        })
     }

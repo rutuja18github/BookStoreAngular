@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BookService } from 'src/app/Services/BookService/book.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
 
 @Component({
@@ -8,14 +9,24 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 })
 export class OpenBookViewComponent implements OnInit{
   bookDetails:any
- 
-  constructor(private dataService:DataService){}
+  bookId:any
+  constructor(private dataService:DataService,private bookService:BookService){}
   ngOnInit(): void {
     this.dataService.openBook.subscribe((result)=>{
       this.bookDetails=result
+      this.bookId=this.bookDetails._id
       console.log('open book ',this.bookDetails._id)
     }
     )
   }
   
+  addToCart(){
+    let data={
+      _id:this.bookId
+    }
+    console.log(data)
+    this.bookService.addToCart(data).subscribe((response:any)=>{
+      console.log(response)
+    })
+  }
 }
