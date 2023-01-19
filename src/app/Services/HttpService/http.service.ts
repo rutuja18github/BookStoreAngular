@@ -15,7 +15,9 @@ export class HttpService {
   getService(url: string, token: boolean = true, httpOptions: any = {}) {
     return this.httpClient.get(this.baseUrl + url, token && httpOptions)
   }
-
+  putServiceData(url: string, token: boolean = true, httpOptions: any = {}){
+    return this.httpClient.put(this.baseUrl + url, token && httpOptions)
+  }
   putService(url: string,requestData:any, token: boolean = true, httpOptions: any = {}){
     return this.httpClient.put(this.baseUrl + url,requestData, token && httpOptions)
   }

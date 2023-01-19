@@ -43,4 +43,13 @@ export class CartComponent {
       this.getCart()
     })
   }
+//this.router.navigate([ '/dashboard/display' ])
+  purchesBook(){
+    let data={
+      message:'Book Purchase'
+    }
+    this.bookService.purchase(data).subscribe((response)=>{
+      console.log(response)
+    })
+  }
 }
