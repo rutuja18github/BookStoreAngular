@@ -20,13 +20,22 @@ export class OpenBookViewComponent implements OnInit{
     )
   }
   
-  addToCart(){
+  addInCart(){
     let data={
       _id:this.bookId
     }
     console.log(data)
     this.bookService.addToCart(data).subscribe((response:any)=>{
       console.log(response)
+    })
+  }
+
+  addInWishlist(){
+    let data={
+      _id:this.bookId
+    }
+    this.bookService.addToWishlist(data).subscribe((response:any)=>{
+      console.log(response)  
     })
   }
 }
