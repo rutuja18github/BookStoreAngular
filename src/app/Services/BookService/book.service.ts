@@ -40,15 +40,26 @@ export class BookService {
   
     return this.httpService.postService(`/cart/${data._id}`,data, true, header)
   }
-  getCart(){
-    
+  getCart() {
     let header={
-      Headers:new HttpHeaders({
+      headers:new HttpHeaders({
            'Content-Type' : 'application/json',
-           Authorization:'Bearer '+ this.token,
+           'Authorization':'Bearer '+ this.token,
       })
     }
     return this.httpService.getService("/cart/get",true,header)
+  }
+  removeBook(data:any){
+    console.log(this.token)
+    console.log(data)
+    let header={
+      headers:new HttpHeaders({
+           'Content-Type' : 'application/json',
+           'Authorization':'Bearer '+ this.token,
+      })
+    }
+  
+    return this.httpService.postService(`/cart/remove/${data._id}`,data, true, header)
   }
 }
 

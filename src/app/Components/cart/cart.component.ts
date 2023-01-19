@@ -8,18 +8,39 @@ import { BookService } from 'src/app/Services/BookService/book.service';
 })
 export class CartComponent {
 
-  cartlist : any
-
+  bookDetail: any = [];
+  
   constructor( private bookService : BookService){}
 
   ngOnInit(): void {
     this.getCart()
   }
-
   getCart(){
     this.bookService.getCart().subscribe((response : any)=>{
       console.log(response.data)
-      this.cartlist = response.data
+      this.bookDetail = response.data.books,
+
+      console.log(this.bookDetail)
+    })
+  }
+
+  addBook(id:any){
+    let data={
+      _id:id
+    }
+    this.bookService.addToCart(data).subscribe((response)=>{
+      console.log(response)
+      this.getCart()
+    })
+  }
+
+  removeBook(id:any){
+    let data={
+      _id:id
+    }
+    this.bookService.removeBook(data).subscribe((response)=>{
+      console.log(response)
+      this.getCart()
     })
   }
 }

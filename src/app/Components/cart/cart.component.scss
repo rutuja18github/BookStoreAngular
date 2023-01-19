@@ -18,12 +18,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 50vw;
-    height: 30vh;
+    //height: 30vh;
     background: #FFFFFF 0% 0% no-repeat padding-box;
     border: 1px solid lightgray;
     border-radius: 1px;
     margin-top: 20px;
     margin-bottom: 30px;
+    padding-bottom: 20px;
   }
   
   .cart-detail {
@@ -44,25 +45,26 @@
   }
   .bookDetail{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
     width: 48vw;
+    //border: 4px solid red;
    }
   .bookInfo{
       display: flex;
       flex-direction: row;
       margin-left: 40px;
+      margin-top: 20px;
       // height: 10vh;
       // width: 10vw;
   }
-
+   
   .image{
     padding-top: 10px;
     //height: 200px;
     width: 80px;
   }
   .bookData{
-    //margin-left: 30px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     //border: 4px solid blue;
@@ -129,15 +131,18 @@
   background-color: transparent;
 }
 
-.place-order-button {
-  margin-top: 80px;
-  left: 50%;
+.blueButton{
+  text-align: end;
+  width: 46vw;
+  }
+  #btn{
+  //font-size: 2px;
   width: 151px;
   height: 35px;
   background-color: #3371B5;
   border: none;
   color: white;
-}
+  }
 
 .address{
   padding: 15px;
@@ -148,8 +153,8 @@
 }
 
 .userDetails{
-  border: 1px solid red;
-  width: 45vw;
+ // border: 1px solid black;
+  width: 44vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -161,7 +166,7 @@
   flex-direction: row;
 }
 .textField {
-  width: 15vw;
+  width: 17vw;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -171,7 +176,7 @@
 .addressInput{
   display: flex;
   flex-direction: column;
-  width: 30vw;
+  width: 34vw;
   //margin-left: -15px;
 }
 .radioButton{
@@ -180,13 +185,22 @@
 }
 
 .editAddress {
-  width: 41vw;
+  width: 40vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
   padding: 10px 40px;
-  border: 1px solid blue;
+  //border: 1px solid blue;
+}
+.addressButton{
+  width: 145px;
+  height: 35px;
+  background-color: transparent;
+  border-color: #A03037;
+  color: #A03037;
+  border-radius: 3px;
+  margin-right: -40px;
 }
 .order-summary{
   padding: 15px;

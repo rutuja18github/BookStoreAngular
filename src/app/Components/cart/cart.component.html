@@ -12,28 +12,30 @@
             </select>
         </div>
         <div class="bookDetail">
-        <div class="bookInfo">
-            <div class="image">
-                <img style="width: 44px;  height: 54px;" src="../../assets/bookImage2.png">
-            </div>
-            <div class="bookData">
-                <span class="bookName">name</span>
-                <span class="authorName"> by author</span>
-                <div>
-                    <span class="discountPrice">price</span>
-                    <span class="originalPrice">Rs. oPrice</span>
+            <div class="bookInfo" *ngFor="let book of bookDetail">
+                <div class="image">
+                    <img style="width: 44px;  height: 54px;" src="../../assets/bookImage2.png">
                 </div>
-                <div class="buttons">
-                    <div class="plus-minus">
-                        <button>+</button>
-                        <span class="cartQty">cart</span>
-                        <button>-</button>
+                <div class="bookData">
+                    <span class="bookName">{{book.bookName}}</span>
+                    <span class="authorName"> {{book.author}}</span>
+                    <div>
+                        <span class="discountPrice">Rs.{{book.discountPrice}}</span>
+                        <span class="originalPrice">Rs.{{book.price}}</span>
                     </div>
-                    <button mat-stroked-button class="remove"> Remove</button>
+                    <div class="buttons">
+                        <div class="plus-minus">
+                            <button (click)="addBook(book._id)">+</button>
+                            <span class="cartQty">{{book.quantity}}</span>
+                            <button (click)="removeBook(book._id)">-</button>
+                        </div>
+                        <button mat-stroked-button class="remove"> Remove</button>
+                    </div>
                 </div>
             </div>
-        </div>
-            <button class="place-order-button" mat-flat-button>Place Order</button>
+            <div class="blueButton">
+                  <button id ="btn" mat-flat-button>Place Order</button>
+             </div>
         </div>
     </div>
 
@@ -42,56 +44,60 @@
     <div class="address">
         <div>
             <div class="editAddress">
-                <span>Address Details</span>
-                <button  mat-flat-button>Add New Address</button>
+                <span style="margin-top: 10px;">Address Details</span>
+                <button mat-flat-button class="addressButton">Add New Address</button>
             </div>
             <div class="userDetails">
                 <div class="textFieldsDiv">
                     <div class="textField">
-                        <span >Full name</span>
+                        <span>Full name</span>
                         <mat-form-field appearance="outline" class="">
-                        <input matInput placeholder="" >
-                        <mat-error>Full name is required</mat-error>
+                            <input matInput >
+                            <mat-error>Full name is required</mat-error>
                         </mat-form-field>
                     </div>
                     <div class="textField">
-                        <span >Mobile number</span>
+                        <span>Mobile number</span>
                         <mat-form-field appearance="outline" style="margin-left: 10px;">
-                        <input matInput placeholder="" >
-                        <mat-error>Mobile number is required</mat-error>
+                            <input matInput placeholder="">
+                            <mat-error>Mobile number is required</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="addressInput">
-                    <span >Address</span>
-                    <mat-form-field appearance="outline" >
-                    <input matInput placeholder="" >
-                    <mat-error>Address is required</mat-error>
+                    <span>Address</span>
+                    <mat-form-field appearance="outline">
+                        <input matInput placeholder="">
+                        <mat-error>Address is required</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="textFieldsDiv">
                     <div class="textField">
-                        <span >city/town</span>
+                        <span>city/town</span>
                         <mat-form-field appearance="outline" class="">
-                        <input matInput placeholder="" >
-                        <mat-error>city/town is required</mat-error>
+                            <input matInput placeholder="">
+                            <mat-error>city/town is required</mat-error>
                         </mat-form-field>
                     </div>
                     <div class="textField">
-                        <span >State</span>
-                        <mat-form-field appearance="outline" style="margin-left: 10px;" >
-                        <input matInput>
-                        <mat-error>State is required</mat-error>
+                        <span>State</span>
+                        <mat-form-field appearance="outline" style="margin-left: 10px;">
+                            <input matInput>
+                            <mat-error>State is required</mat-error>
                         </mat-form-field>
                     </div>
                 </div>
                 <div class="radioButton">
-                    <span >Type</span>
+                    <span>Type</span>
                     <mat-radio-group aria-label="Select an option" style="margin-left: -10px;">
-                        <mat-radio-button  value="1">Option 1</mat-radio-button>
-                        <mat-radio-button value="2">Option 2</mat-radio-button>
+                        <mat-radio-button value="1">Home</mat-radio-button>
+                        <mat-radio-button value="2">Work</mat-radio-button>
+                        <mat-radio-button value="2">Other</mat-radio-button>
                     </mat-radio-group>
                 </div>
+            </div>
+            <div class="blueButton">
+            <button id ="btn" mat-flat-button>Continue</button>
             </div>
         </div>
     </div>
