@@ -15,7 +15,7 @@ export class WishlistComponent  {
   getBookWishlist(){
       this.bookService.getWishlist().subscribe((response:any)=>{
         this.bookArray=response.data.books
-        console.log(this.bookArray)
+        //console.log(this.bookArray)
       })
   }
   removeBook(id:any){

@@ -9,17 +9,16 @@ import { BookService } from 'src/app/Services/BookService/book.service';
 export class CartComponent {
 
   bookDetail: any = [];
-  
+  step: number = 1;
   constructor( private bookService : BookService){}
 
   ngOnInit(): void {
     this.getCart()
   }
-  getCart(){
-    this.bookService.getCart().subscribe((response : any)=>{
+   getCart(){
+     this.bookService.getCart().subscribe((response : any)=>{
       console.log(response.data)
       this.bookDetail = response.data.books,
-
       console.log(this.bookDetail)
     })
   }
@@ -51,5 +50,12 @@ export class CartComponent {
     this.bookService.purchase(data).subscribe((response)=>{
       console.log(response)
     })
+  }
+
+  secondStep(){
+    this.step=2
+  }
+  thirdStep(){
+    this.step=3
   }
 }

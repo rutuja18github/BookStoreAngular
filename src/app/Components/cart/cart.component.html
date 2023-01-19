@@ -3,9 +3,12 @@
         <p class="home" routerLink="/dashboard/display">Home / </p>
         <p style="color: black; font-weight: 500;">My cart</p>
     </div>
-    <div class="booksOuterDiv">
+    <div *ngIf="bookDetail.length === 0">
+        <h1>cart is empty</h1>
+    </div>
+    <div class="booksOuterDiv" *ngIf="bookDetail.length > 0 && step >= 1">
         <div class="cart-detail">
-            <span style="color: black; font-weight: 500;">My Cart()</span>
+            <span style="color: black; font-weight: 500;">My Cart({{bookDetail.length}})</span>
             <select class="dropdown-select">
                 <option value="">Use current location</option>
                 <option value="location-1">Location</option>
@@ -34,14 +37,14 @@
                 </div>
             </div>
             <div class="blueButton">
-                  <button id ="btn" mat-flat-button>Place Order</button>
+                  <button id ="btn" mat-flat-button (click)="secondStep()">Place Order</button>
              </div>
         </div>
     </div>
 
 
     <!-- Address details -->
-    <div class="address">
+    <div class="address" *ngIf="bookDetail.length > 0 && step >= 2">
         <div>
             <div class="editAddress">
                 <span style="margin-top: 10px;">Address Details</span>
@@ -97,13 +100,13 @@
                 </div>
             </div>
             <div class="blueButton">
-            <button id ="btn" mat-flat-button>Continue</button>
+            <button id ="btn" mat-flat-button (click)="thirdStep()">Continue</button>
             </div>
         </div>
     </div>
 
     <!-- Order summary -->
-    <div class="order-summary">
+    <div class="order-summary" *ngIf="bookDetail.length > 0 && step >=3">
         <div>
             <span>OrderSummary</span>
                 <div class="bookDetail">

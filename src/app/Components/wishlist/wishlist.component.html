@@ -3,9 +3,12 @@
         <p class="home" routerLink="/dashboard/display">Home / </p>
         <p style="color: black; font-weight: 500;">My Wishlist</p>
     </div>
-    <div class="booksOuterDiv">
+    <div *ngIf="bookArray.length === 0">
+        <h1>Wishlist is empty</h1>
+    </div>
+    <div class="booksOuterDiv" *ngIf="bookArray.length > 0">
         <div class="wishlistcount">
-            <span class="wishlistfont" >My Wishlist ()</span>
+            <span class="wishlistfont" >My Wishlist ({{bookArray.length}})</span>
         </div>
         <div class="booksInfo" *ngFor="let book of bookArray">
             <div class="book" >
