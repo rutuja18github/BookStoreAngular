@@ -106,6 +106,25 @@
     <div class="order-summary">
         <div>
             <span>OrderSummary</span>
+                <div class="bookDetail">
+                    <div class="bookInfo" *ngFor="let book of bookDetail">
+                        <div class="image">
+                            <img style="width: 44px;  height: 54px;" src="../../assets/bookImage2.png">
+                        </div>
+                        <div class="bookData">
+                            <span class="bookName">{{book.bookName}}</span>
+                            <span class="authorName"> {{book.author}}</span>
+                            <div>
+                                <span class="discountPrice">Rs.{{book.discountPrice}}</span>
+                                <span class="originalPrice">Rs.{{book.price}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blueButton">
+                          <button id ="btn" mat-flat-button>Place Order</button>
+                     </div>
+                </div>
+           
         </div>
     </div>
 

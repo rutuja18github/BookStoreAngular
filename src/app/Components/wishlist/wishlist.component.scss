@@ -44,9 +44,14 @@
     border: 1px solid lightgray;
     border-radius: 1px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: -30px;
 }
+.book{
+  width: 55vw;
+  display: flex;
+  flex-direction: row;
 
+}
 .image{
     padding-top: 33px;
     padding-left: 33px;
@@ -80,9 +85,8 @@
 }
 
 .delete {
-    margin-left: 580px;
+    //margin-left: 580px;
     margin-top: 60px;
-    
     
 }
 
@@ -91,3 +95,4 @@
     width: 30px;
     //margin-bottom: 100px;
 }
+

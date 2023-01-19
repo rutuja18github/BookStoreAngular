@@ -61,5 +61,27 @@ export class BookService {
   
     return this.httpService.postService(`/cart/remove/${data._id}`,data, true, header)
   }
+
+  addToWishlist(data:any){
+    console.log(this.token)
+    console.log(data)
+    let header={
+      headers:new HttpHeaders({
+           'Content-Type' : 'application/json',
+           'Authorization':'Bearer '+ this.token,
+      })
+    }
+  
+    return this.httpService.postService(`/wishlist/${data._id}`,data, true, header)
+  }
+  getWishlist() {
+    let header={
+      headers:new HttpHeaders({
+           'Content-Type' : 'application/json',
+           'Authorization':'Bearer '+ this.token,
+      })
+    }
+    return this.httpService.getService("/wishlist/get",true,header)
+  }
 }
 
