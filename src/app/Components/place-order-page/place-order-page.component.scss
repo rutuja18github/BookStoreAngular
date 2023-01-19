@@ -1,0 +1,59 @@
+.outer{
+    display: flex;
+    margin-top: 10px;
+    padding-left: 25%;
+}
+
+.continuebutton {
+    background-color:#3371B5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 10px;
+    text-align: center;
+    justify-content: center;
+ 
+}
+.Continue{
+    padding-left: 120px;
+}
+.hurray{
+    padding-left: 15%;
+}
+
+.test{
+    margin-left: 20px;
+    width: 400px;
+    border:0px solid red;
+}
+.table{
+    width: 750px;
+    height: 120px;
+    display: flex;
+    border:0px solid red;
+}
+.tlb{
+    width: 800px;
+    height: 200px;
+    margin-left: -20%;
+    margin-bottom: -30px;
+   
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70vw;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+  }
+  
+  tr:nth-child(odd) {
+    background-color: #dddddd;
+  }
