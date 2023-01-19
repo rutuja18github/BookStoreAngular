@@ -83,5 +83,15 @@ export class BookService {
     }
     return this.httpService.getService("/wishlist/get",true,header)
   }
+
+  removeFromWishlist(data:any) {
+    let header={
+      headers:new HttpHeaders({
+           'Content-Type' : 'application/json',
+           'Authorization':'Bearer '+ this.token,
+      })
+    }
+    return this.httpService.putService(`/wishlist/remove/${data._id}`,data,true,header)
+  }
 }
 

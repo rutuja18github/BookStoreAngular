@@ -18,5 +18,13 @@ export class WishlistComponent  {
         console.log(this.bookArray)
       })
   }
-  removeBook(){}
+  removeBook(id:any){
+    let data={
+      _id:id
+    }
+    this.bookService.removeFromWishlist(data).subscribe((response)=>{
+      console.log(response)
+      this.getBookWishlist()
+    })
+  }
 }
