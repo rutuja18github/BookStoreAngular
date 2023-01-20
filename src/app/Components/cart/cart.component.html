@@ -3,9 +3,14 @@
         <p class="home" routerLink="/dashboard/display">Home / </p>
         <p style="color: black; font-weight: 500;">My cart</p>
     </div>
+    <!-- empty  Cart -->
     <div *ngIf="bookDetail.length === 0">
-        <h1>cart is empty</h1>
+        <div class="emptyCart">
+            <h2 >cart is empty</h2> 
+            <button id ="btn" routerLink="/dashboard/display"> View Books </button>  
+        </div> 
     </div>
+        <!-- book in Cart -->
     <div class="booksOuterDiv" *ngIf="bookDetail.length > 0 && step >= 1">
         <div class="cart-detail">
             <span style="color: black; font-weight: 500;">My Cart({{bookDetail.length}})</span>
@@ -38,16 +43,19 @@
             </div>
             <div class="blueButton">
                   <button id ="btn" mat-flat-button (click)="secondStep()">Place Order</button>
-             </div>
+            </div>
         </div>
     </div>
 
 
     <!-- Address details -->
-    <div class="address" *ngIf="bookDetail.length > 0 && step >= 2">
-        <div>
+    <div class="address" *ngIf="bookDetail.length > 0">
+        <div class="editAddress" *ngIf="step >= 1">
+            <span>Address Details</span>
+        </div>
+        <div *ngIf=" step >= 2">
             <div class="editAddress">
-                <span style="margin-top: 10px;">Address Details</span>
+                <span>Customer Details</span>
                 <button mat-flat-button class="addressButton">Add New Address</button>
             </div>
             <div class="userDetails">
@@ -106,10 +114,10 @@
     </div>
 
     <!-- Order summary -->
-    <div class="order-summary" *ngIf="bookDetail.length > 0 && step >=3">
+    <div class="order-summary" *ngIf="bookDetail.length > 0">
         <div>
-            <span>OrderSummary</span>
-                <div class="bookDetail">
+            <span class="order">OrderSummary</span>
+                <div class="bookDetail" *ngIf="step >=3">
                     <div class="bookInfo" *ngFor="let book of bookDetail">
                         <div class="image">
                             <img style="width: 44px;  height: 54px;" src="../../assets/bookImage2.png">
@@ -123,8 +131,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="blueButton">
-                          <button id ="btn" mat-flat-button (click)="purchesBook()" routerLink="/dashboard/placeOrder">Place Order</button>
+                    <div class="blueButton" >
+                          <button style="margin-right: 30px;" id ="btn" mat-flat-button (click)="purchesBook()" routerLink="/dashboard/placeOrder">Place Order</button>
                      </div>
                 </div>
            

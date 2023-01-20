@@ -21,7 +21,7 @@
     <div class="display-books">
         <mat-card class="book" *ngFor="let book of bookList">
             <div class="book-image">
-                <img src="../../assets/bookImage2.png" (click)="openBookDetails(book)" >
+                <img src="../../assets/bookImage2.png" (click)="openBookDetails(book._id)" >
             </div>
             <div class="book-details">
                 <span class="bookName">{{book.bookName}}</span>

@@ -4,7 +4,10 @@
         <p style="color: black; font-weight: 500;">My Wishlist</p>
     </div>
     <div *ngIf="bookArray.length === 0">
-        <h1>Wishlist is empty</h1>
+        <div class="emptyWishlist">
+            <h2>Wishlist is empty</h2>
+            <button id ="btn" routerLink="/dashboard/display"> View Books </button>  
+        </div> 
     </div>
     <div class="booksOuterDiv" *ngIf="bookArray.length > 0">
         <div class="wishlistcount">

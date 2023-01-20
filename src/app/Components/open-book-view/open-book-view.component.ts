@@ -12,14 +12,21 @@ export class OpenBookViewComponent implements OnInit{
   bookId:any
   constructor(private dataService:DataService,private bookService:BookService){}
   ngOnInit(): void {
-    this.dataService.openBook.subscribe((result)=>{
-      this.bookDetails=result
-      this.bookId=this.bookDetails._id
-      console.log('open book ',this.bookDetails._id)
-    }
-    )
+    // this.dataService.openBook.subscribe((result)=>{
+    //   this.bookDetails=result
+    //   this.bookId=this.bookDetails._id
+    //   console.log('open book ',this.bookDetails._id)
+    // }
+    // )
+    this.bookId = localStorage.getItem('bookId')
+    this.getBookById();
   }
-  
+  getBookById(){
+    this.bookService.getBookById(this.bookId).subscribe((response:any)=>{
+      console.log('quick view of book',response.data)
+      this.bookDetails = response.data;
+    })
+  }
   addInCart(){
     let data={
       _id:this.bookId

@@ -34,9 +34,10 @@ export class DisplayBookComponent implements OnInit{
     })
   }
 
-  openBookDetails(book:any){
-    console.log(book)
-    this.dataService.sharedData(book);
+  openBookDetails(bookId:any){
+    localStorage.setItem('bookId',bookId)
+    // console.log(book)
+    // this.dataService.sharedData(book);
     this.router.navigate([ '/dashboard/openBook' ])
   }
 }

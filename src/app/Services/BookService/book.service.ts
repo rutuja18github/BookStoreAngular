@@ -19,13 +19,13 @@ export class BookService {
     }
     return this.httpService.getService("/book/allbook",false,header)
   }
-  getBookById(data:any){
+  getBookById(bookId:any){
     let header={
       Headers:new HttpHeaders({
            'Content-Type' : 'application/json'
       })
     }
-    return this.httpService.getService(`/book/${data._id}`,false,header)
+    return this.httpService.getService(`/book/${bookId}`,false,header)
   }
 
   addToCart(data:any){
