@@ -22,6 +22,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import { PlaceOrderPageComponent } from './Components/place-order-page/place-order-page.component';
 import { FormsModule } from "@angular/forms";
+import { SearchFilterPipe } from './Pipe/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormsModule } from "@angular/forms";
     CartComponent,
     WishlistComponent,
     PlaceOrderPageComponent,
+    SearchFilterPipe,
   
   ],
   imports: [

@@ -18,10 +18,14 @@ export class DisplayBookComponent implements OnInit{
   price:any;
   discountPrice:any;
   quantity:any
-
+  search=''
   constructor(private bookService:BookService,private dataService:DataService,private router:Router){}
 
   ngOnInit(): void {
+    this.dataService.search.subscribe((result:any)=>{
+      this.search=result
+      console.log(result)
+    })
     this.getAllBook()
   }
 

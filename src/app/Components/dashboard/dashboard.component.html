@@ -9,7 +9,7 @@
 
         <div class="search">
             <img src="../../../assets/Search-icon.svg">
-            <input class="search-input" type="text" placeholder="Search...">
+            <input class="search-input" type="text" #inputBox (keyup)="search(inputBox.value)" placeholder="Search...">
         </div>
 
         <div class="profile-cart">

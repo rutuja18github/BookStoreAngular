@@ -19,7 +19,7 @@
     </div>
 
     <div class="display-books">
-        <mat-card class="book" *ngFor="let book of bookList">
+        <mat-card class="book" *ngFor="let book of bookList | searchFilter:search">
             <div class="book-image">
                 <img src="../../assets/bookImage2.png" (click)="openBookDetails(book._id)" >
             </div>
