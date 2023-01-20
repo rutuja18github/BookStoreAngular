@@ -10,6 +10,12 @@ export class CartComponent {
 
   bookDetail: any = [];
   step: number = 1;
+  fullname:any
+  mobileNumber:any
+  address:any
+  city:any
+  state:any
+  addressType:any
   constructor( private bookService : BookService){}
 
   ngOnInit(): void {
@@ -55,7 +61,18 @@ export class CartComponent {
   secondStep(){
     this.step=2
   }
-  thirdStep(){
+  addCustomerDetails(){
     this.step=3
+    let data={
+      fullname:this.fullname,
+      mobileNumber:this.mobileNumber,
+      address:this.address,
+      city:this.city,
+      state:this.state,
+      addressType:this.addressType
+    }
+    this.bookService.customerDetail(data).subscribe((response)=>{
+      console.log(response)
+    })
   }
 }

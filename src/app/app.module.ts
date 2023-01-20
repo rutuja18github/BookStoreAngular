@@ -21,6 +21,7 @@ import { WishlistComponent } from './Components/wishlist/wishlist.component';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatMenuModule} from '@angular/material/menu';
 import { PlaceOrderPageComponent } from './Components/place-order-page/place-order-page.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { PlaceOrderPageComponent } from './Components/place-order-page/place-ord
     MatSelectModule,
     MatCardModule,
     MatRadioModule,
-    MatMenuModule
+    MatMenuModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
