@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BookService } from 'src/app/Services/BookService/book.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
 
@@ -10,7 +11,7 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 export class OpenBookViewComponent implements OnInit{
   bookDetails:any
   bookId:any
-  constructor(private dataService:DataService,private bookService:BookService){}
+  constructor(private dataService:DataService,private bookService:BookService,private snackbar : MatSnackBar){}
   ngOnInit(): void {
     // this.dataService.openBook.subscribe((result)=>{
     //   this.bookDetails=result
@@ -44,5 +45,8 @@ export class OpenBookViewComponent implements OnInit{
     this.bookService.addToWishlist(data).subscribe((response:any)=>{
       console.log(response)  
     })
+  }
+  openSnackbar(message: any, action: any) {
+    this.snackbar.open(message, action)
   }
 }

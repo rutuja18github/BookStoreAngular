@@ -23,7 +23,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { PlaceOrderPageComponent } from './Components/place-order-page/place-order-page.component';
 import { FormsModule } from "@angular/forms";
 import { SearchFilterPipe } from './Pipe/search-filter.pipe';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar'
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +51,8 @@ import { SearchFilterPipe } from './Pipe/search-filter.pipe';
     MatCardModule,
     MatRadioModule,
     MatMenuModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
