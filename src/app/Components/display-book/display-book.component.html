@@ -19,7 +19,7 @@
     </div>
 
     <div class="display-books">
-        <mat-card class="book" *ngFor="let book of bookList | searchFilter:search">
+        <mat-card class="book" *ngFor="let book of bookList | searchFilter:search | paginate: {itemsPerPage:10, currentPage:page,totalItems:totalLength}">
             <div class="book-image">
                 <img src="../../assets/bookImage2.png" (click)="openBookDetails(book._id)" >
             </div>
@@ -39,4 +39,7 @@
             </div>
         </mat-card>
     </div>
+</div>
+<div class="pages">
+    <pagination-controls (pageChange)="page=$event" class="page"></pagination-controls>
 </div>

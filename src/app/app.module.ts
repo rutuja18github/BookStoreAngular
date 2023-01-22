@@ -24,6 +24,7 @@ import { PlaceOrderPageComponent } from './Components/place-order-page/place-ord
 import { FormsModule } from "@angular/forms";
 import { SearchFilterPipe } from './Pipe/search-filter.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
     MatRadioModule,
     MatMenuModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
