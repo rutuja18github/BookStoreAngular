@@ -1,0 +1,34 @@
+<div class="header">
+    <mat-toolbar class="header-inner">
+        <div class="header-firstInner">
+            <div class="logo">
+                <img src="../../../assets/book.png">
+            </div>
+            <div>
+                <span class="text">Bookstore</span>
+            </div>
+
+            <div class="search">
+                <img src="../../../assets/Search-icon.svg">
+                <input class="search-input" type="text" #inputBox (keyup)="search(inputBox.value)" placeholder="Search...">
+            </div>
+        </div>
+        <div class="profile-cart">
+            <button class="icons" mat-flat-button>
+                <img style="margin-top: 10px;" class="iconImage" [matMenuTriggerFor]="menu" src="../../../assets/personIcon.svg">
+                <p style="margin-left: 23px;">Profile</p>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item >My Orders</button>
+                <button mat-menu-item routerLink="/dashboard/wishlist">My Wishlist</button>
+                <button mat-menu-item >Logout</button>
+              </mat-menu>
+            <button class="icons" mat-flat-button routerLink="/dashboard/cart">
+                <span style="margin-top: 10px;"  matBadge="{{cartSize}}" matBadgeSize="small" matBadgePosition="above"><img class="iconImage" src="../../../assets/cart.png"></span>
+                <span style="margin-left: 23px;" >Cart</span>
+                <!-- <span matBadge="4" style="font-size:10px" class="cart-badge">({{cartSize}})</span> -->
+                
+            </button>
+        </div>
+    </mat-toolbar>
+</div>

@@ -11,64 +11,70 @@
   display: flex;
   flex-direction: row;
   width: 70vw;
-  height: 80vh;
+  //height: 80vh;
   justify-content: center;
   background-color: rgb(173, 173, 173);
-  
- 
+  border: 1px solid red;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .divbar{
   display: flex;
   flex-direction: row;
-  height:48vh;
-  width:40vw;
   margin: auto;
 }
-.image {
+.image{
   display: flex;
   flex-direction: column;
-  background-color: rgb(244, 244, 244);
-  width: 19vw;
-  height: 42vh;  
+  background-color: #F5F5F5;
+  width: 15vw;
+  margin-top: 20px;
+  margin-bottom: 20px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  margin-top: 30px;
-  margin-left: 30px;
-  
+  padding-top: 30px;
+  padding-left: 30px;
 }
+
 
 .shopimage {
   width: 190px;
   height: 190px;
   border-radius: 100px;
-  margin: auto;
   
 }
 
 h3 {
   text-align: center;
-  margin-bottom: 30px;
+  margin-top: 20px;
 }
 .inner-Form {
   display: flex;
   flex-direction: column;
   background-color: white;
-  width: 20vw;
-  height: 50vh;
+  width: 18vw;
   margin: auto;
   justify-items: center;
   border-radius: 10px;
-  padding: 0px 0px 0px 50px;
+  padding-left: 40px;
+  padding-bottom: 50px;
+  //border: 1px solid red;
 }
+
 .text-fileds {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap:0.5rem;
 }
+.fieldClass{
+  display: flex;
+  flex-direction: column;
+}
 .textBox {
   height: 3vh;
-  //width: 200px;
   width: 15vw;
   border:1px solid rgb(223, 220, 220);
 }
@@ -82,14 +88,15 @@ h3 {
   border: white;
   height: 4vh;
   width: 15.5vw;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 .top {
   display: flex;
   width:80%;
   height: 15%;
   margin-top: 20px;
-  margin-left: -17px;
+  margin-left: -10px;
+  margin-bottom: 10px;
 }
 .login {
   width: 100px;

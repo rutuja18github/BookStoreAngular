@@ -21,8 +21,8 @@ export class SigninComponent implements OnInit{
       })
   }
 
-  get f(){return this.loginForm.controls}
-
+  get email(){return this.loginForm.get('email')}
+  get password(){return this.loginForm.get('password')}
   onSubmit(){
     this.submitted=true
     if(this.loginForm.valid){
@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit{
             console.log(responce)
             localStorage.setItem('Token',responce.data)
             this.router.navigate([ '/dashboard/display' ])
-       })
+      })
     }
   }
 

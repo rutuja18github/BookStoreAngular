@@ -12,11 +12,17 @@
                 </div>
 
                 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                    <div class="text-fileds">   
-                        <label class="font-label">Email id</label>
-                        <input class="textBox" type="email" formControlName="email"/>
-                        <label class="font-label">Password</label>
-                        <input class="textBox" type="password" id="pwd" name="pwd" formControlName="password"/>
+                    <div class="text-fileds"> 
+                        <div class="fieldClass">
+                            <label class="font-label">Email id</label>
+                            <input class="textBox" type="email" formControlName="email"/>
+                            <span style="color: red; font-size: 10px;" *ngIf="email && email.invalid && email.touched">Enter email id</span>
+                        </div>
+                        <div class="fieldClass">
+                            <label class="font-label">Password</label>
+                            <input class="textBox" type="password" id="pwd" name="pwd" formControlName="password"/>
+                            <span style="color: red; font-size: 10px;" *ngIf="password && password.invalid && password.touched">Enter password</span>
+                        </div>
                         <button class="Forgot"><b>Forgot Password?</b></button>
                         <button class="btnlogin">Login</button>
                     </div>

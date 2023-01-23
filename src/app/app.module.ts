@@ -26,7 +26,8 @@ import { SearchFilterPipe } from './Pipe/search-filter.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatIconModule} from '@angular/material/icon'
-import {MatBadgeModule} from '@angular/material/badge'
+import {MatBadgeModule} from '@angular/material/badge';
+import { HeaderComponent } from './Components/header/header.component'
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import {MatBadgeModule} from '@angular/material/badge'
     WishlistComponent,
     PlaceOrderPageComponent,
     SearchFilterPipe,
+    HeaderComponent,
     
    
   
