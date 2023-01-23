@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BookService } from 'src/app/Services/BookService/book.service';
+import { DataService } from 'src/app/Services/DataService/data.service';
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +17,8 @@ export class CartComponent {
   city:any
   state:any
   addressType:any
-  constructor( private bookService : BookService){}
+  cartSize=''
+  constructor( private bookService : BookService,private dataService:DataService){}
 
   ngOnInit(): void {
     this.getCart()
@@ -25,10 +27,12 @@ export class CartComponent {
      this.bookService.getCart().subscribe((response : any)=>{
       console.log(response.data)
       this.bookDetail = response.data.books,
+      this.cartSize=this.bookDetail.length
       console.log(this.bookDetail)
     })
   }
-
+  
+ 
   addBook(id:any){
     let data={
       _id:id

@@ -47,6 +47,8 @@ export class OpenBookViewComponent implements OnInit{
     })
   }
   openSnackbar(message: any, action: any) {
-    this.snackbar.open(message, action)
+    this.snackbar.open(message, action,{
+      duration: 3000
+    })
   }
 }

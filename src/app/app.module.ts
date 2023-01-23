@@ -25,6 +25,9 @@ import { FormsModule } from "@angular/forms";
 import { SearchFilterPipe } from './Pipe/search-filter.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { NgxPaginationModule } from 'ngx-pagination';
+import {MatIconModule} from '@angular/material/icon'
+import {MatBadgeModule} from '@angular/material/badge'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +40,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     WishlistComponent,
     PlaceOrderPageComponent,
     SearchFilterPipe,
+    
+   
   
   ],
   imports: [
@@ -54,7 +59,9 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatMenuModule,
     FormsModule,
     MatSnackBarModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatIconModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
