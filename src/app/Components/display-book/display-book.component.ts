@@ -46,4 +46,21 @@ export class DisplayBookComponent implements OnInit{
     // this.dataService.sharedData(book);
     this.router.navigate([ '/dashboard/openBook' ])
   }
+  addBookToCart(bookId:any){
+    let data={
+      _id:bookId
+    }
+    console.log(data)
+    this.bookService.addToCart(data).subscribe((response:any)=>{
+      console.log(response)
+    })
+  }
+  addBookToWishlist(bookId:any){
+    let data={
+      _id:bookId
+    }
+    this.bookService.addToWishlist(data).subscribe((response:any)=>{
+      console.log(response)  
+    })
+  }
 }

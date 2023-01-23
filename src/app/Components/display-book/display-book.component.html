@@ -36,6 +36,10 @@
                     <span class="discountPrice">Rs. {{book.discountPrice}}</span>
                     <span class="originalPrice">Rs. {{book.price}}</span>
                 </div>
+                <div class="icons">
+                    <img (click)="addBookToWishlist(book._id)" class="iconImage" src="../../../assets/wishlist.svg">
+                    <img (click)="addBookToCart(book._id)" class="cartIcon" src="../../../assets/shopping-cart.png">
+                </div>
             </div>
         </mat-card>
     </div>

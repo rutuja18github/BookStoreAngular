@@ -107,3 +107,17 @@
     font-size: 15px;
     padding-bottom: 50px;
   }
+  .icons{
+    display: flex;
+    flex-direction: row;
+    //border: 1px solid brown;
+  }
+  .iconImage{
+    height: 20px;
+  }
+  .cartIcon{
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+  }
+ 
