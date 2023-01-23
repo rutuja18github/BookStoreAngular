@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BookService } from 'src/app/Services/BookService/book.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
 
@@ -8,20 +9,29 @@ import { DataService } from 'src/app/Services/DataService/data.service';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent {
-
+  userDetailForm !: FormGroup
+  submitted=false
   bookDetail: any = [];
   step: number = 1;
-  fullname:any
-  mobileNumber:any
-  address:any
-  city:any
-  state:any
-  addressType:any
+  // fullname:any
+  // mobileNumber:any
+  // address:any
+  // city:any
+  // state:any
+  // addressType:any
   cartSize=''
-  constructor( private bookService : BookService,private dataService:DataService){}
+  constructor( private bookService : BookService,private dataService:DataService,private formBuilder:FormBuilder){}
 
   ngOnInit(): void {
     this.getCart()
+    this.userDetailForm=this.formBuilder.group({
+      fullname:['',Validators.required],
+      mobileNumber:['',Validators.required],
+      address:['',Validators.required],
+      city:['',Validators.required],
+      state:['',Validators.required],
+      addressType:['',Validators.required]
+    })
   }
    getCart(){
      this.bookService.getCart().subscribe((response : any)=>{
@@ -66,17 +76,22 @@ export class CartComponent {
     this.step=2
   }
   addCustomerDetails(){
-    this.step=3
-    let data={
-      fullname:this.fullname,
-      mobileNumber:this.mobileNumber,
-      address:this.address,
-      city:this.city,
-      state:this.state,
-      addressType:this.addressType
-    }
-    this.bookService.customerDetail(data).subscribe((response)=>{
-      console.log(response)
-    })
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.userDetailForm.valid) {
+      this.step=3
+      let data={
+        fullname:this.userDetailForm.value.fullname,
+        mobileNumber:this.userDetailForm.value.mobileNumber,
+        address:this.userDetailForm.value.address,
+        city:this.userDetailForm.value.city,
+        state:this.userDetailForm.value.state,
+        addressType:this.userDetailForm.value.addressType
+      }
+      this.bookService.customerDetail(data).subscribe((response)=>{
+        console.log(response)
+      })
+  }
   }
 }

@@ -58,58 +58,60 @@
                 <span>Customer Details</span>
                 <button mat-flat-button class="addressButton">Add New Address</button>
             </div>
-            <div class="userDetails">
-                <div class="textFieldsDiv">
-                    <div class="textField">
-                        <span>Full name</span>
-                        <mat-form-field appearance="outline" class="">
-                            <input matInput [(ngModel)]="fullname" >
-                            <mat-error>Full name is required</mat-error>
+            <form [formGroup]="userDetailForm" (ngSubmit)="addCustomerDetails()">
+                <div class="userDetails">
+                    <div class="textFieldsDiv">
+                        <div class="textField">
+                            <span>Full name</span>
+                            <mat-form-field appearance="outline" class="">
+                                <input matInput formControlName="fullname" >
+                                <mat-error>Full name is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="textField">
+                            <span style="margin-left: 15px;">Mobile number</span>
+                            <mat-form-field appearance="outline" style="margin-left: 10px;">
+                                <input matInput formControlName="mobileNumber">
+                                <mat-error>Mobile number is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="addressInput">
+                        <span>Address</span>
+                        <mat-form-field appearance="outline">
+                            <input matInput formControlName="address">
+                            <mat-error>Address is required</mat-error>
                         </mat-form-field>
                     </div>
-                    <div class="textField">
-                        <span style="margin-left: 15px;">Mobile number</span>
-                        <mat-form-field appearance="outline" style="margin-left: 10px;">
-                            <input matInput [(ngModel)]="mobileNumber">
-                            <mat-error>Mobile number is required</mat-error>
-                        </mat-form-field>
+                    <div class="textFieldsDiv">
+                        <div class="textField">
+                            <span>city/town</span>
+                            <mat-form-field appearance="outline" class="">
+                                <input matInput formControlName="city">
+                                <mat-error>city/town is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="textField">
+                            <span style="margin-left: 15px;">State</span>
+                            <mat-form-field appearance="outline" style="margin-left: 10px;">
+                                <input matInput formControlName="state">
+                                <mat-error>State is required</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="radioButton">
+                        <span>Type</span>
+                        <mat-radio-group formControlName="addressType" aria-label="Select an option" style="margin-left: -10px;">
+                            <mat-radio-button value="1">Home</mat-radio-button>
+                            <mat-radio-button value="2">Work</mat-radio-button>
+                            <mat-radio-button value="2">Other</mat-radio-button>
+                        </mat-radio-group>
                     </div>
                 </div>
-                <div class="addressInput">
-                    <span>Address</span>
-                    <mat-form-field appearance="outline">
-                        <input matInput [(ngModel)]="address">
-                        <mat-error>Address is required</mat-error>
-                    </mat-form-field>
+                <div class="blueButton">
+                <button id ="btn" mat-flat-button>Continue</button>
                 </div>
-                <div class="textFieldsDiv">
-                    <div class="textField">
-                        <span>city/town</span>
-                        <mat-form-field appearance="outline" class="">
-                            <input matInput [(ngModel)]="city">
-                            <mat-error>city/town is required</mat-error>
-                        </mat-form-field>
-                    </div>
-                    <div class="textField">
-                        <span style="margin-left: 15px;">State</span>
-                        <mat-form-field appearance="outline" style="margin-left: 10px;">
-                            <input matInput [(ngModel)]="state">
-                            <mat-error>State is required</mat-error>
-                        </mat-form-field>
-                    </div>
-                </div>
-                <div class="radioButton">
-                    <span>Type</span>
-                    <mat-radio-group [(ngModel)]="addressType" aria-label="Select an option" style="margin-left: -10px;">
-                        <mat-radio-button value="1">Home</mat-radio-button>
-                        <mat-radio-button value="2">Work</mat-radio-button>
-                        <mat-radio-button value="2">Other</mat-radio-button>
-                    </mat-radio-group>
-                </div>
-            </div>
-            <div class="blueButton">
-            <button id ="btn" mat-flat-button (click)="addCustomerDetails()">Continue</button>
-            </div>
+            </form>
         </div>
     </div>
 
