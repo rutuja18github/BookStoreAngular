@@ -1,17 +1,10 @@
-<app-header></app-header>
+<app-header [cartSize]="cartSize"></app-header>
 <div>
     <div class="bookHead">
         <div class="booktitle" >
             <span style="font-size: 22px; font-weight: 500;">Books</span>
             <span class="countbook">({{noOfBooks}} Items)</span>
         </div>
-        <!-- <mat-form-field  appearance="outline">
-            <mat-label>Sort by relevence</mat-label>
-            <mat-select>
-                <mat-option>Price:Low to High</mat-option>
-                <mat-option>Price:High to Low</mat-option>
-            </mat-select>
-        </mat-form-field> -->
         <select class="dropdown-select">
             <option value="">Sort by relevence</option>
             <option value="location-1">Price:Low to High</option>

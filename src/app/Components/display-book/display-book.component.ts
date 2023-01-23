@@ -21,6 +21,7 @@ export class DisplayBookComponent implements OnInit{
   search=''
   page:number=1;
   totalLength:any;
+  cartSize=0
   constructor(private bookService:BookService,private dataService:DataService,private router:Router){}
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class DisplayBookComponent implements OnInit{
       console.log(result)
     })
     this.getAllBook()
+    this. getCartSize()
   }
 
   getAllBook(){
@@ -46,6 +48,15 @@ export class DisplayBookComponent implements OnInit{
     // this.dataService.sharedData(book);
     this.router.navigate([ '/dashboard/openBook' ])
   }
+  getCartSize(){
+    this.bookService.getCart().subscribe((response : any)=>{
+       response.data.books.forEach((result:any)=>{
+       this.cartSize =this.cartSize  + result.quantity
+      })
+       console.log(this.cartSize)
+      
+    })
+  }
   addBookToCart(bookId:any){
     let data={
       _id:bookId
@@ -54,6 +65,7 @@ export class DisplayBookComponent implements OnInit{
     this.bookService.addToCart(data).subscribe((response:any)=>{
       console.log(response)
     })
+    this.cartSize=this.cartSize +1
   }
   addBookToWishlist(bookId:any){
     let data={

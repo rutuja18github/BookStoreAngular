@@ -13,17 +13,12 @@ export class CartComponent {
   submitted=false
   bookDetail: any = [];
   step: number = 1;
-  // fullname:any
-  // mobileNumber:any
-  // address:any
-  // city:any
-  // state:any
-  // addressType:any
-  cartSize=''
+  cartSize=0
   constructor( private bookService : BookService,private dataService:DataService,private formBuilder:FormBuilder){}
 
   ngOnInit(): void {
     this.getCart()
+    this.getCartSize()
     this.userDetailForm=this.formBuilder.group({
       fullname:['',Validators.required],
       mobileNumber:['',Validators.required],
@@ -33,12 +28,21 @@ export class CartComponent {
       addressType:['',Validators.required]
     })
   }
+  getCartSize(){
+    this.bookService.getCart().subscribe((response : any)=>{
+      console.log(response.data)
+      this.bookDetail = response.data.books,
+       console.log(this.bookDetail)
+       response.data.books.forEach((result:any)=>{
+       this.cartSize =this.cartSize  + result.quantity
+      })
+       console.log(this.cartSize)
+      
+    })
+  }
    getCart(){
      this.bookService.getCart().subscribe((response : any)=>{
       console.log(response.data)
-      this.bookDetail = response.data.books,
-      this.cartSize=this.bookDetail.length
-      console.log(this.bookDetail)
     })
   }
   
@@ -51,6 +55,7 @@ export class CartComponent {
       console.log(response)
       this.getCart()
     })
+    this.cartSize=this.cartSize +1
   }
 
   removeBook(id:any){
@@ -61,6 +66,7 @@ export class CartComponent {
       console.log(response)
       this.getCart()
     })
+    this.cartSize=this.cartSize -1
   }
   purchesBook(){
     let data={

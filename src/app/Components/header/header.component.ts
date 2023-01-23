@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,Input,OnInit } from '@angular/core';
 import { BookService } from 'src/app/Services/BookService/book.service';
 import { DataService } from 'src/app/Services/DataService/data.service';
 @Component({
@@ -9,7 +9,7 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 export class HeaderComponent implements OnInit {
 
   cartlist: any[] = []
-  cartSize:any
+  @Input() cartSize:any
   constructor(private dataService:DataService,private bookService:BookService){}
   ngOnInit(): void {
     this.cartQuantity()
@@ -17,10 +17,7 @@ export class HeaderComponent implements OnInit {
 
   cartQuantity(){
     this.bookService.getCart().subscribe((response : any)=>{
-      console.log(response)
-      this.cartlist = response.data.books,
-      this.cartSize=this.cartlist.length
-      console.log(this.cartSize)
+      console.log(response)     
     })
   }
   search(event:any){

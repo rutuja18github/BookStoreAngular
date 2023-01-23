@@ -42,9 +42,6 @@ import { HeaderComponent } from './Components/header/header.component'
     PlaceOrderPageComponent,
     SearchFilterPipe,
     HeaderComponent,
-    
-   
-  
   ],
   imports: [
     BrowserModule,

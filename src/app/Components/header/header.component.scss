@@ -13,7 +13,7 @@
   .header-firstInner {
     display: flex;
     flex-direction: row;
-    //border: 4px solid red;
+   // border: 4px solid red;
   } 
   .logo {
     margin-left: 180px;
@@ -47,12 +47,12 @@
   
     
   .profile-cart {
+    //border: 2px solid blue;
     width: 15vw;
     height: 99%;
-    //border: 4px solid black;
     display: flex;
     flex-direction: row;
-    //margin-left: 200px;
+    margin-right: 100px;
   }
   
   .icons {
@@ -69,4 +69,39 @@
     margin-left:25px;
     width:24px;
     height:24px;
+  }
+
+  @media only screen and (max-width:1025px) {
+    .profile-cart {
+      margin-right: 40px;
+    }
+  }
+  @media only screen and (max-width:912px) {
+    .profile-cart {
+      margin-right: 30px;
+    }
+    .logo {
+      margin-left: 100px;
+    }
+  }
+  @media only screen and (max-width:912px) {
+    .profile-cart {
+      margin-right: 10px;
+    }
+    .logo {
+      margin-left: 80px;
+    }
+  }
+  @media only screen and (max-width:540px) {
+    .profile-cart {
+      margin-right: 30px;
+    }
+    .logo {
+      margin-left: 10px;
+    }
+  }
+  @media only screen and (max-width:280px) {
+    .header {
+      width: 120vw;
+    }
   }

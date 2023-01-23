@@ -11,21 +11,27 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 export class OpenBookViewComponent implements OnInit{
   bookDetails:any
   bookId:any
+  cartSize=0
   constructor(private dataService:DataService,private bookService:BookService,private snackbar : MatSnackBar){}
   ngOnInit(): void {
-    // this.dataService.openBook.subscribe((result)=>{
-    //   this.bookDetails=result
-    //   this.bookId=this.bookDetails._id
-    //   console.log('open book ',this.bookDetails._id)
-    // }
-    // )
     this.bookId = localStorage.getItem('bookId')
     this.getBookById();
+    this. getCartSize()
   }
   getBookById(){
     this.bookService.getBookById(this.bookId).subscribe((response:any)=>{
       console.log('quick view of book',response.data)
       this.bookDetails = response.data;
+    })
+  }
+  getCartSize(){
+    this.cartSize=0
+    this.bookService.getCart().subscribe((response : any)=>{
+      console.log(response.data)
+       response.data.books.forEach((result:any)=>{
+       this.cartSize =this.cartSize  + result.quantity
+      })
+       console.log(this.cartSize)  
     })
   }
   addInCart(){
@@ -35,7 +41,8 @@ export class OpenBookViewComponent implements OnInit{
     console.log(data)
     this.bookService.addToCart(data).subscribe((response:any)=>{
       console.log(response)
-    })
+      this.cartSize=this.cartSize +1
+     })
   }
 
   addInWishlist(){
@@ -43,7 +50,7 @@ export class OpenBookViewComponent implements OnInit{
       _id:this.bookId
     }
     this.bookService.addToWishlist(data).subscribe((response:any)=>{
-      console.log(response)  
+      console.log(response) 
     })
   }
   openSnackbar(message: any, action: any) {
