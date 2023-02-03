@@ -1,5 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject, tap } from 'rxjs';
 import { HttpService } from '../HttpService/http.service';
 
 @Injectable({
@@ -7,6 +8,10 @@ import { HttpService } from '../HttpService/http.service';
 })
 export class BookService {
   token: any;
+  private refrashrequired=new Subject<void>()
+  get Refrashrequired(){
+     return this.refrashrequired
+  }
   constructor(private httpService: HttpService) { 
     this.token= localStorage.getItem('Token')
   }
@@ -39,6 +44,9 @@ export class BookService {
     }
   
     return this.httpService.postService(`/cart/${data._id}`,data, true, header)
+    // .pipe(
+    //   tap(() => { this.refrashrequired.next()})
+    // )
   }
   getCart() {
     let header={

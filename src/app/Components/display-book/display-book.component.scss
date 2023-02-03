@@ -6,6 +6,7 @@
     margin-left:250px ;
     margin-top: 30px;
     padding-left: 10px;
+    //border:2px solid red;
 }
 
 .booktitle{
@@ -22,6 +23,7 @@
     flex-wrap: wrap;
     width: 62vw;
     margin-left: 250px;
+    //border:2px solid blue;
   }
   .dropdown-select{
     width: 180px;
@@ -119,6 +121,28 @@
     width: 20px;
     margin-left: 5px;
   }
+  @media only screen and (max-width:1484px) {
+   
+    .display-books{
+      width: 65vw;
+    }
+  }
+  @media only screen and (max-width:1300px) {
+    .bookHead{
+      width: 69vw;
+  }
+    .display-books{
+      width: 72vw;
+    }
+  }
+  @media only screen and (max-width:1260px) {
+    .bookHead{
+      width: 75vw;
+  }
+    .display-books{
+      width: 78vw !important;
+    }
+  }
   @media only screen and (max-width:1285px) {
     .bookHead{
       margin-left: 170px;
@@ -133,6 +157,17 @@
     margin-left: 450px;
   }
   }
+  @media only screen and (max-width:1285px) {
+    .bookHead{
+      width: 76vw;
+  }
+ 
+  .display-books{
+    width: 85vw !important;
+  }
+  }
+  
+
   @media only screen and (max-width:1024px) {
   .dropdown-select{
     margin-right: 50px;

@@ -1,102 +1,53 @@
-.OuterDiv{
-  width: 100%;
-  height: 90vh;
+.mainDiv{
+  margin: 0;
+  height: 100%;
   display:flex;
   justify-content: center;
   align-items: center;
-  padding-top: 60px;
 }
 
-.outer-main {
+.form-content{
+  min-height: calc(100% - 120px);
   display: flex;
   flex-direction: row;
-  width: 70vw;
-  //height: 80vh;
   justify-content: center;
+  align-items: center;
+  width: 70vw;
   background-color: rgb(173, 173, 173);
-  border: 1px solid red;
-  padding-top: 120px;
-  padding-bottom: 120px;
-  padding-left: 10px;
-  padding-right: 10px;
 }
-.divbar{
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-}
-.image{
+.image {
   display: flex;
   flex-direction: column;
-  background-color: #F5F5F5;
-  width: 15vw;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  background-color: rgb(244, 244, 244);
+  width: 17vw;
+  height: 42vh;  
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  padding-top: 30px;
-  padding-left: 30px;
 }
-
-
 .shopimage {
   width: 190px;
   height: 190px;
   border-radius: 100px;
-  
-}
-
+  margin: auto; 
+} 
 h3 {
   text-align: center;
-  margin-top: 20px;
-}
-.inner-Form {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  width: 18vw;
-  margin: auto;
-  justify-items: center;
-  border-radius: 10px;
-  padding-left: 40px;
-  padding-bottom: 50px;
-  //border: 1px solid red;
+  margin-bottom: 30px;
 }
 
-.text-fileds {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap:0.5rem;
-}
-.fieldClass{
-  display: flex;
-  flex-direction: column;
-}
-.textBox {
-  height: 3vh;
-  width: 15vw;
-  border:1px solid rgb(223, 220, 220);
-}
- 
-.font-label{
-  font-size :10px;
-}
-.btnlogin {
-  background-color: #a03037;
-  color: white;
-  border: white;
-  height: 4vh;
-  width: 15.5vw;
-  margin-top: 10px;
+.form{
+  width: fit-content;
+  padding: 30px 40px;
+  background: #ffffff;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #f5f5f5;
+  border-radius: 8px;
+  opacity: 1;
 }
 .top {
   display: flex;
-  width:80%;
   height: 15%;
-  margin-top: 20px;
-  margin-left: -10px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .login {
   width: 100px;
@@ -106,8 +57,6 @@ h3 {
   background-color: white;
   border: none;
   text-align: left;
-  //border-bottom: 1px solid #a03037;
-  //text-decoration:underline;
   position: relative;
   display: inline-block;
 }
@@ -134,115 +83,104 @@ h3 {
   //text-decoration:underline;
   text-align: right;
 }
-.error{
-font-size: 10px;
-color: red;
+.rowDiv{
+  display: flex;
+  flex-direction: column;
+  margin-top: -15px;
+}
+.txtfield{
+  width: 15vw;
+}
+::ng-deep .mat-mdc-text-field-wrapper {
+  height: 27px !important;    
+  bottom:2px;
+}
+::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+padding-top: 2px;
+padding-bottom: 2px;
 }
 
+::ng-deep .mat-mdc-form-field-infix {
+min-height: 40px;
+}
+
+::ng-deep .mat-mdc-form-field-error-wrapper {
+position: absolute;
+font-size: 10px;
+top: -6px !important;
+left: 0 !important;
+right: 2px !important;
+padding: 0 !important;
+}
+.txtboxlbl{
+  font-size: 10px;
+  font-weight: 500;
+  color: #0A0102;
+}
+.forgotDiv{
+text-align: end;
+margin-top: -20px;
+}
 .Forgot {
-    width: 110px;
-    font-size: 10px;
-    background-color: white;
-    border: none;
-    text-align: right;
-    margin-left: 122px;
-  }
-  
-  .separator {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    width: 225px;
-    margin-bottom: 13px;
-    margin-top: 20px;
-   
+width: 110px;
+font-size: 10px;
+background-color: white;
+border: none;
+text-align: right;
+color: #9D9D9D;
+}
+.btnlogin {
+  background-color: #a03037;
+  color: white;
+  border: white;
+  height: 4vh;
+  width: 15vw;
+  margin-top: 5px;
+  border-radius: 3px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 25px;
+ 
 }
 
 .separator::before,
 .separator::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid rgb(185, 185, 185);
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid rgb(185, 185, 185);
 
- }
+}
 
 .separator:before {
-    margin-right: 20px;
-   
+  margin-right: 20px;
+ 
 }
 
 .separator:after {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .buttonStyle {
-    display: flex;
-    //width: 230px;
-    width: 80%;
-    gap: 1rem;
-    height: 30px;
-    //border:1px solid red;
-   // margin-left: 45px;
-  }
-  .facebook {
-    background-color: #4266b2;
-    width: 120px;
-    color: white;
-    border: none;
-    border-radius: 3px;
-  }
-  .google {
-    width: 120px;
-    border:rgb(102, 98, 98);
-    border-radius: 3px;
-   
-  }
-
-  @media only screen and (max-width :1240px){  
-    .Forgot {
-      margin-left: 80px;
-    }
-    .separator {
-      width: 15.5vw;
-    }
-    }
+  display: flex;
+  gap: 1.5rem;
+  height: 30px;
+  padding-bottom: 10px;
+}
+.facebook {
+  background-color: #4266b2;
+  width: 100px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+.google {
+  width: 100px;
+  border:rgb(102, 98, 98);
+  border-radius: 3px;
  
-  @media only screen and (max-width :915px){
-    .outer-main {
-      width: 70vw;
-      height: 40vh;
-    }
-    .divbar{
-      height:20vh;
-      width:auto;
-    }
-    .image {
-      width: auto;
-      height: auto;  
-    }
-    
-    .inner-Form {
-      //width: 25vw;
-      padding-right: 50px;
-      height: 22vh;
-    }
-    .textBox {
-      height: auto;
-      width: auto;
-    }
-    .btnlogin {
-      height: auto;
-      width: auto;
-    }
-    .Forgot {
-      margin-left: 78px;
-    }
-    .buttonStyle {
-      width: auto;
-    }
-    .separator {
-      width: auto;
-
-     
-  }
 }

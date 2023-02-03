@@ -1,7 +1,5 @@
 .main-div{
-    padding-bottom: 20px;
     padding-left: 17%;
-    margin-top: 5px;
     height: fit-content;
   }
   .bookHead{
@@ -17,11 +15,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 60vw;
-    height: 25vh;
+    //height: 25vh;
     //border: 1px solid red;
     border-radius: 1px;
     margin-top: 20px;
-    margin-bottom: 30px;
+    padding-bottom: 110px;
   }
   .wishlistcount {
     border: 1px solid #E4E4E4;

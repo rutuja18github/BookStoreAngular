@@ -75,4 +75,14 @@ export class DisplayBookComponent implements OnInit{
       console.log(response)  
     })
   }
+  PriceLowToHigh(){
+    console.log('low to high')
+    this.bookList = this.bookList.sort((low: any, high: any) => low.discountPrice - high.discountPrice);
+    console.log(this.bookList)
+  }
+
+  PriceHighToLow(){ 
+    console.log('low to high')
+    this.bookList = this.bookList.sort((low: any, high: any) => high.discountPrice - low.discountPrice);
+  }
 }

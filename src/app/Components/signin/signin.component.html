@@ -1,39 +1,38 @@
-<div class="OuterDiv">
-    <div class="outer-main">
-        <div class="divbar">
-            <div class="image">
-                <img class="shopimage" src="../../assets/bookStore.png" />
-                <h3>ONLINE BOOK SHOPPING</h3>
-            </div>
-            <div class="inner-Form">
-                <div class="top">
-                    <button class="login">LOGIN</button>
-                    <button class="signup" routerLink="/signup">SIGNUP</button>
-                </div>
-
-                <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-                    <div class="text-fileds"> 
-                        <div class="fieldClass">
-                            <label class="font-label">Email id</label>
-                            <input class="textBox" type="email" formControlName="email"/>
-                            <span style="color: red; font-size: 10px;" *ngIf="email && email.invalid && email.touched">Enter email id</span>
-                        </div>
-                        <div class="fieldClass">
-                            <label class="font-label">Password</label>
-                            <input class="textBox" type="password" id="pwd" name="pwd" formControlName="password"/>
-                            <span style="color: red; font-size: 10px;" *ngIf="password && password.invalid && password.touched">Enter password</span>
-                        </div>
-                        <button class="Forgot"><b>Forgot Password?</b></button>
-                        <button class="btnlogin">Login</button>
-                    </div>
-                </form>
-                <div class="separator"><b>OR</b></div>
-                <div class="buttonStyle">
-                    <button class="facebook">Facebook</button>
-                    <button class="google">Google</button>
-                </div>
-                
-            </div>
+<div class="mainDiv">
+    <div class="form-content">
+        <div class="image">
+            <img class="shopimage" src="../../assets/bookStore.png" />
+            <h3>ONLINE BOOK SHOPPING</h3>
         </div>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="form">
+            <div class="top">
+                <button class="login" >LOGIN</button>
+                <button class="signup" routerLink="/signup">SIGNUP</button>
+            </div>   
+            <div class="rowDiv">
+                <label class="txtboxlbl">Email id</label>
+                <mat-form-field appearance="outline" >
+                    <input matInput placeholder="" formControlName="email"/>
+                    <mat-error>Enter Full Name</mat-error>
+                </mat-form-field>
+            </div> 
+            <div class="rowDiv">
+                <label class="txtboxlbl">Password</label>
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="" formControlName="password"/>
+                    <mat-error>Enter Full Name</mat-error>
+                </mat-form-field>
+            </div> 
+            <div class="forgotDiv">
+                <button class="Forgot"><b>Forgot Password?</b></button>    
+            </div>
+            <button class="btnlogin" >Login</button> 
+            <div class="separator"><b>OR</b></div>
+            <div class="buttonStyle">
+                <button class="facebook">Facebook</button>
+                <button class="google">Google</button>
+            </div>
+        </form>
+        
     </div>
 </div>

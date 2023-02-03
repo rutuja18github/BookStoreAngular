@@ -1,34 +1,44 @@
-<div class="OuterDiv">
-    <div class="outer-main">
-        <div class="divbar">
-            <div class="image">
-                <img class="shopimage" src="../../assets/bookStore.png" />
-                <h3>ONLINE BOOK SHOPPING</h3>
-            </div>
-            <div class="inner-Form">
-                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"> 
-                    <div class="top">
-                        <button class="login" routerLink="/login">LOGIN</button>
-                        <button class="signup">SIGNUP</button>
-                    </div>
 
-                    <div class="text-fileds">
-                        <label class="font-label">Full Name</label>
-                        <input class="textBox" type="text" formControlName="fullname"/>
-                        <span class="error" *ngIf="signupForm.controls['fullname'].invalid && signupForm.controls['fullname'].touched">Enter full name</span>
-                        <label class="font-label">Email id</label>
-                        <input class="textBox" type="email" formControlName="email" />
-                        <span class="error" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">Enter email</span>
-                        <label class="font-label" >Password</label>
-                        <input class="textBox" type="password" id="pwd" name="pwd" formControlName="password"/>
-                        <span class="error" *ngIf="signupForm.controls['password'].invalid && signupForm.controls['password'].touched">Enter password</span>
-                        <label class="font-label">Mobile Number</label>
-                        <input class="textBox" type="text" formControlName="phone"/>
-                        <span class="error" *ngIf="signupForm.controls['phone'].invalid && signupForm.controls['phone'].touched">Enter mobile number</span>
-                        <button class="btnlogin" >Signup</button>
-                    </div>
-                </form>
-            </div>
+<div class="mainDiv">
+    <div class="form-content">
+        <div class="image">
+            <img class="shopimage" src="../../assets/bookStore.png" />
+            <h3>ONLINE BOOK SHOPPING</h3>
         </div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form">
+            <div class="top">
+                <button class="login" routerLink="/login">LOGIN</button>
+                <button class="signup">SIGNUP</button>
+            </div>   
+            <div class="rowDiv">
+                <label class="txtboxlbl">Full Name</label>
+                <mat-form-field appearance="outline"  >
+                    <input matInput placeholder="" formControlName="fullname" />
+                    <mat-error>Enter Full Name</mat-error>
+                </mat-form-field>
+            </div> 
+            <div class="rowDiv">
+                <label class="txtboxlbl">Email id</label>
+                <mat-form-field appearance="outline" >
+                    <input matInput placeholder="" formControlName="email"/>
+                    <mat-error>Enter Full Name</mat-error>
+                </mat-form-field>
+            </div> 
+            <div class="rowDiv">
+                <label class="txtboxlbl">Password</label>
+                <mat-form-field appearance="outline">
+                    <input matInput placeholder="" formControlName="password"/>
+                    <mat-error>Enter Full Name</mat-error>
+                </mat-form-field>
+            </div> 
+            <div class="rowDiv">
+                <label class="txtboxlbl">Mobile Number</label>
+                <mat-form-field appearance="outline" class="txtfield" >
+                    <input matInput placeholder="" formControlName="phone"/>
+                    <mat-error>Enter Full Name</mat-error>
+                </mat-form-field>
+            </div>
+            <button class="btnlogin" >Signup</button> 
+        </form>
     </div>
 </div>

@@ -53,7 +53,8 @@ export class CartComponent {
     }
     this.bookService.addToCart(data).subscribe((response)=>{
       console.log(response)
-      this.getCart()
+      //this.getCart()
+      this.ngOnInit()
     })
     this.cartSize=this.cartSize +1
   }
@@ -64,7 +65,8 @@ export class CartComponent {
     }
     this.bookService.removeBook(data).subscribe((response)=>{
       console.log(response)
-      this.getCart()
+      //this.getCart()
+      this.ngOnInit()
     })
     this.cartSize=this.cartSize -1
   }

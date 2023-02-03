@@ -27,7 +27,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar'
 import { NgxPaginationModule } from 'ngx-pagination';
 import {MatIconModule} from '@angular/material/icon'
 import {MatBadgeModule} from '@angular/material/badge';
-import { HeaderComponent } from './Components/header/header.component'
+import { HeaderComponent } from './Components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,7 @@ import { HeaderComponent } from './Components/header/header.component'
     WishlistComponent,
     PlaceOrderPageComponent,
     SearchFilterPipe,
-    HeaderComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

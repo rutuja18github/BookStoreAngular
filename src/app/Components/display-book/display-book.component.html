@@ -1,15 +1,17 @@
-<app-header [cartSize]="cartSize"></app-header>
+<!-- <app-header [cartSize]="cartSize"></app-header> -->
+<app-header></app-header>
 <div>
     <div class="bookHead">
         <div class="booktitle" >
             <span style="font-size: 22px; font-weight: 500;">Books</span>
             <span class="countbook">({{noOfBooks}} Items)</span>
         </div>
-        <select class="dropdown-select">
-            <option value="">Sort by relevence</option>
-            <option value="location-1">Price:Low to High</option>
-            <option value="location-2">Price:High to Low</option>
-         </select>
+        <!-- <button (click)="PriceHighToLow()">click</button> -->
+        <mat-select class="dropdown-select">
+            <mat-option value="" disabled selected>Sort by relevence</mat-option>
+            <mat-option value=""  (click)="PriceLowToHigh()">Price:Low to High</mat-option>
+            <mat-option value="" (click)="PriceHighToLow()">Price:High to Low</mat-option>
+        </mat-select>
     </div>
 
     <div class="display-books">
